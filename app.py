@@ -7,18 +7,14 @@ app = Flask(__name__)
 CORS(app)
 
 # MongoDB connection
-# mongodb+srv://admin:<db_password>@cluster0.tszjsu0.mongodb.net/
-# mongodb+srv://admin:<db_password>@cluster0.ee7vq.mongodb.net/
-# mongodb+srv://admin:<db_password>@cluster0.ee7vq.mongodb.net/
-# mongodb+srv://admin:<db_password>@cluster0.tszjsu0.mongodb.net/
-# mongodb+srv://admin:<db_password>@cluster0.kxwpz.mongodb.net/
+
 
 client = MongoClient(
     "mongodb+srv://admin:admin123@cluster0.kxwpz.mongodb.net/?retryWrites=true&w=majority",
     ssl=True,
     tlsAllowInvalidCertificates=True  # Use for testing only
 )
-# mongodb+srv://admin:<db_password>@cluster0.kxwpz.mongodb.net/
+
 db = client["cafe_db"]
 inventory_collection = db["inventory"]
 
